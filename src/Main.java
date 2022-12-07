@@ -5,13 +5,19 @@ public class Main {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
+        /**
+         * Mathbot is a basic app where you can collect user inputted expression
+         * so you can find its value
+         */
+
+
         System.out.println("\\ Hello welcome to Mathbot :)  /");
 
         System.out.println("Enter your expression: ");
 
         String expression = scan.nextLine();
 
-        int num1 = Integer.parseInt(expression.substring(0, expression.indexOf(" ")));
+        int num1 = Integer.parseInt(expression.substring(0, expression.indexOf(" "))); //Extracts the first number, operation, and second number via using substring to manipulate the user's string
 
         int num2 = Integer.parseInt(expression.substring(expression.indexOf(" ") + 3));
 
@@ -25,6 +31,15 @@ public class Main {
         Calculator app2 = new Calculator();
 
         app2.calculate();
+
+
+        /**
+         * The guessing game is a feature of the Mathbot where you can choose a maximum value
+         * , the computer will choose a value within that range and you pick how many guesses
+         * you want to have. If you can pick the correct number within the number of guesses
+         * you win
+         */
+
 
         System.out.println("Would you like to play the guessing game with Mathbot?");
 
