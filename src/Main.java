@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\\ Hello welcome to the Mathbot :)  /");
+        System.out.println("\\ Hello welcome to Mathbot :)  /");
 
         System.out.println("Enter your expression: ");
 
@@ -17,11 +17,14 @@ public class Main {
 
         String op = expression.substring(expression.indexOf(" ") + 1, expression.indexOf(" ") + 2);
 
-        System.out.println("Expression Entered: " + num1 + " " +  op + " " +  num2);
 
         Calculator app = new Calculator(num1, num2, op);
 
         app.calculate();
+
+        Calculator app2 = new Calculator();
+
+        app2.calculate();
 
         System.out.println("Would you like to play the guessing game with Mathbot?");
 

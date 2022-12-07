@@ -18,29 +18,28 @@ public class Calculator {
 
     public void calculate(){
         if (op.equals("/")){
-            System.out.println(divide());
+            System.out.println("Expression Entered: " + num1 + " " +  op + " " +  num2 + " which is " + divide());
         }
 
         if (op.equals("*")){
-            System.out.println(multiply());
+            System.out.println("Expression Entered: " + num1 + " " +  op + " " +  num2 + " which is " + multiply());
         }
 
         if (op.equals("-")){
-            System.out.println(subtract());
+            System.out.println("Expression Entered: " + num1 + " " +  op + " " +  num2 + " which is " + subtract());
         }
 
         if (op.equals("^")){
-            System.out.println(exponent());
+            System.out.println("Expression Entered: " + num1 + " " +  op + " " +  num2 + " which is " + exponent());
         }
 
 
         if (op.equals("+")){
-            System.out.println(addition());
+            System.out.println("Expression Entered: " + num1 + " " +  op + " " +  num2 + " which is " + addition());
         }
 
-
         if (op.equals("%")){
-            System.out.println(mod());
+            System.out.println("Expression Entered: " + num1 + " " +  op + " " +  num2 + " which is " + mod());
         }
     }
 
@@ -64,7 +63,7 @@ public class Calculator {
         return num1 + num2;
     }
 
-    public double mod(){
+    public int mod(){
         return num1 % num2;
     }
 
@@ -93,7 +92,7 @@ public class Calculator {
         }
 
         if (userGuess == randomNum && guessCount < maxGuess){
-            System.out.println("Congrats you found the random number which was: " + randomNum + ". And you did it in " + guessCount + " guesses.");
+            System.out.println("Congrats you found the random number which was: " + Integer.toString(randomNum) + ". And you did it in " + Integer.toString(guessCount) + " guesses.");
         }
         else{
             System.out.println("Sorry you lost, you took " + guessCount + " guesses");
