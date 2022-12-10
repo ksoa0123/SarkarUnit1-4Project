@@ -86,7 +86,7 @@ public class Calculator {
      * @return returns a double which contains the first number divided by the second number
      */
     public double divide(){
-        return (double) num1 / num2;
+        return roundNum((double) num1 / num2);
     }
 
     /**
@@ -150,6 +150,10 @@ public class Calculator {
     }
 
 
+    public double roundNum(double a){
+        return Math.round(a * 100.0) / 100.0;
+    }
+
     /**
      * the guessingGame method will allow the user to play a guess number command line based game
      * where they can enter in a maximum number for the guess, which would represent the highest
@@ -172,7 +176,7 @@ public class Calculator {
 
         System.out.println(userGuess);
 
-        int randomNum = (int) (Math.random() * maxNum); //Generates random number up to range maxNum
+        int randomNum = (int) (Math.random() * maxNum + 1); //Generates random number up to range maxNum
 
         int guessCount = 1; //Counting number of guesses
 
@@ -181,16 +185,24 @@ public class Calculator {
 
            System.out.println("Sorry " + userGuess + " was not the correct guess.");
 
-           System.out.println("Enter new guess: ");
+           if (userGuess > randomNum){
+               System.out.println("Your number is too high");
+           }
+
+            if (userGuess < randomNum){
+                System.out.println("Your number is too low");
+            }
+
+            System.out.println("Enter new guess: ");
 
            userGuess = scan.nextInt();
         }
 
         if (userGuess == randomNum && guessCount < maxGuess){
-            System.out.println("Congrats you found the random number which was: " + Integer.toString(randomNum) + ". And you did it in " + Integer.toString(guessCount) + " guesses.");
+            System.out.println("Congrats you found the random number which was: " + Integer.toString(randomNum) + "\nAnd you did it in " + Integer.toString(guessCount) + " guesses.");
         }
         else{
-            System.out.println("Sorry you lost, you took " + guessCount + " guesses");
+            System.out.println("Sorry you lost, you took " + guessCount + " guesses" + ". The correct number was " + randomNum);
         }
 
     }

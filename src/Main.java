@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println("\\ Hello welcome to Mathbot :)  /");
 
-        System.out.println("Enter your expression: ");
+        System.out.println("Enter your expression (Format: 5 + 3, 10 * 3 etc.): ");
 
         String expression = scan.nextLine();
 
@@ -28,7 +28,7 @@ public class Main {
 
         app.calculate();
 
-        Calculator app2 = new Calculator();
+        Calculator app2 = new Calculator(); //Overloaded constructor
 
         app2.calculate();
 
@@ -41,12 +41,12 @@ public class Main {
          */
 
 
-        System.out.println("Would you like to play the guessing game with Mathbot?");
+        System.out.println("Would you like to play the guessing game with Mathbot (yes/no) ?");
 
         String reply = scan.nextLine();
 
         if (reply.toLowerCase().equals("y") || reply.toLowerCase().equals("yes")){
-            System.out.println("Enter the maximum number for the range you would like: ");
+            System.out.println("Enter the maximum number for the range you would like (Number can be between 1 and number entered inclusive): ");
 
             int userNum = scan.nextInt();
 
